@@ -10,7 +10,7 @@ Using blocks of sizes determined by a template parameter.
 
 ## Usage
 
-First install [simongog/sdsl-lite](https://github.com/simongog/sdsl-lite) as usual. Then include the new bitvector header as:
+First install [simongog/sdsl-lite](https://github.com/simongog/sdsl-lite) as usual. Then include the new bitvector header that is in `include/sdsl/s9_vector.hpp` as it's shown in the next example:
 
 ```C++
 #include <iostream>
