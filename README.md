@@ -2,10 +2,9 @@
 Add-on for [simongog/sdsl-lite](https://github.com/simongog/sdsl-lite) that defines a new compressed bitvector called `s9_vector`
 
 Implements a new type of compressed bit vector with support of `rank1` and `select1` operations. 
-`s9_vector` is based on a previous implementation that was made with [libcds](https://github.com/fclaude/libcds) in mind.
+`s9_vector` is based on a previous implementation that was made with [libcds](https://github.com/fclaude/libcds) in mind and adds new features such as block size as a template parameter, 64 bits support and several bug fixes.
 
-Converts the input `bit_vector` into a compressed bitvector using *gap encoding* and then compressing the resulting integer vector using *Simple 9* encoding.
-Using blocks of sizes determined by a template parameter.
+Converts the input `bit_vector` into a compressed bitvector using *gap encoding* and then compresses the resulting integer vector using *Simple 9* encoding for each block previously defined.
 
 
 ## Usage
@@ -26,7 +25,7 @@ int main(){
     bit_vector b = bit_vector(80*(1<<20),0);
     for (size_t i=0; i<b.size(); i+=100)
         b[i] = 1;
-    cout << "Tamaños en Bytes:\n" << endl;
+    cout << "Size in Bytes:\n" << endl;
     cout << "Original\t" << size_in_bytes(b) << endl;
    
     rrr_vector<63> rrrb(b);
