@@ -859,14 +859,7 @@ class select_support_s9{
                             *(p  + 13) = (regAux>>26) & 0x00000003; 
                             p += 14; k -= 14;
                             break;
-                    case 9: /**p  = 1; *(p  + 1) = 1; *(p  + 2) = 1; *(p  + 3) = 1;  
-                            *(p  + 4) = 1; *(p  + 5) = 1; *(p  + 6) = 1; *(p  + 7) = 1;  
-                            *(p  + 8) = 1; *(p  + 9) = 1; *(p  + 10) = 1; *(p  + 11) = 1;  
-                            *(p  + 12) = 1; *(p  + 13) = 1; *(p  + 14) = 1; *(p  + 15) = 1;  
-                            *(p  + 16) = 1; *(p  + 17) = 1; *(p  + 18) = 1; *(p  + 19) = 1;  
-                            *(p  + 20) = 1; *(p  + 21) = 1; *(p  + 22) = 1; *(p  + 23) = 1;  
-                            *(p  + 24) = 1; *(p  + 25) = 1; *(p  + 26) = 1; *(p  + 27) = 1;*/
-                            *p = regAux & 0x00000001; *(p + 1) = (regAux>>1) & 0x00000001; 
+                    case 9: *p = regAux & 0x00000001; *(p + 1) = (regAux>>1) & 0x00000001; 
                             *(p + 2) = (regAux>>2) & 0x00000001; *(p + 3) = (regAux>>3) & 0x00000001; 
                             *(p + 4) = (regAux>>4) & 0x00000001; *(p + 5) = (regAux>>5) & 0x00000001;                   
                             *(p + 6) = (regAux>>6) & 0x00000001; *(p + 7) = (regAux>>7) & 0x00000001; 
@@ -902,10 +895,6 @@ class select_support_s9{
             }
                 
             return buffer[j]+j; //Se suma j para compensar los -1 de la codificacion por gaps.5
-            /*assert(acc==i);
-            assert(rank1(pos)==i);
-            assert(access(pos));
-            return pos;*/
         }
 
     public:
